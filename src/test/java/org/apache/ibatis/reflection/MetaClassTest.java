@@ -27,6 +27,7 @@ import org.apache.ibatis.domain.misc.RichType;
 import org.apache.ibatis.domain.misc.generics.GenericConcrete;
 import org.junit.jupiter.api.Test;
 
+//todo UT
 public class MetaClassTest {
 
   private RichType rich = new RichType();

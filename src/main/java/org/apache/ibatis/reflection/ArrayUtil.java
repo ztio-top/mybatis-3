@@ -20,6 +20,7 @@ import java.util.Arrays;
 /**
  * Provides hashCode, equals and toString methods that can handle array.
  */
+//数组工具类
 public class ArrayUtil {
 
   /**
@@ -35,9 +36,11 @@ public class ArrayUtil {
       return 0;
     }
     final Class<?> clazz = obj.getClass();
+    // 普通类
     if (!clazz.isArray()) {
       return obj.hashCode();
     }
+    // 数组类型
     final Class<?> componentType = clazz.getComponentType();
     if (long.class.equals(componentType)) {
       return Arrays.hashCode((long[]) obj);
@@ -86,9 +89,11 @@ public class ArrayUtil {
     if (!clazz.equals(thatObj.getClass())) {
       return false;
     }
+    // 普通类
     if (!clazz.isArray()) {
       return thisObj.equals(thatObj);
     }
+    // 数组类型
     final Class<?> componentType = clazz.getComponentType();
     if (long.class.equals(componentType)) {
       return Arrays.equals((long[]) thisObj, (long[]) thatObj);
@@ -123,10 +128,12 @@ public class ArrayUtil {
     if (obj == null) {
       return "null";
     }
+    // 普通类
     final Class<?> clazz = obj.getClass();
     if (!clazz.isArray()) {
       return obj.toString();
     }
+    // 数组类型
     final Class<?> componentType = obj.getClass().getComponentType();
     if (long.class.equals(componentType)) {
       return Arrays.toString((long[]) obj);

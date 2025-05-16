@@ -27,6 +27,18 @@ import org.apache.ibatis.reflection.property.PropertyTokenizer;
 /**
  * @author Clinton Begin
  */
+//继承 BaseWrapper 抽象类，Map 对象的 ObjectWrapper 实现类。
+/**
+ * MapWrapper 和 BeanWrapper 的大体逻辑是一样的，差异点主要如下：
+ * // MapWrapper.java
+ *
+ * // object 变成了 map
+ * private final Map<String, Object> map;
+ *
+ * // 属性的操作变成了
+ * map.put(prop.getName(), value);
+ * map.get(prop.getName());
+ */
 public class MapWrapper extends BaseWrapper {
 
   private final Map<String, Object> map;
